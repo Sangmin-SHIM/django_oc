@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JeStocke Tuto</title>
-</head>
-<body>
-    <h1>Hello Django</h1>
+<!--listings/templates/listings/tuto.html
+ 'hello.html' -> 'tuto.html' -->
+
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<h1>Hello Django</h1>
     <p>
         J'ai {{ bands | length }} groupes préférés.
     </p>    
@@ -22,5 +19,4 @@
        {% endif %}
        groupes préférés.     
     </p>
-</body>
-</html>
+{% endblock %}

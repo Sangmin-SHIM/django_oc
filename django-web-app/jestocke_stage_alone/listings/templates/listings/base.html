@@ -1,0 +1,19 @@
+<!--listings/templates/listings/base.html
+-->
+{% load static %}
+
+
+<html>
+    <head>
+        <title>JeStocke Base HTML</title>
+        <link rel = "stylesheet" href = "{% static 'listings/styles.css' %}" />
+    </head>
+    
+    <body>
+
+        {% block content %}
+             <!-- Cette partie-là est réservée ! -->
+        {% endblock %}
+
+    </body>
+</html>
