@@ -1,16 +1,19 @@
 #listings/views.py
-
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def hello(request):
-    return HttpResponse('<h1>Hello Django ! Hello JeStocke !</h1>')
+from listings.models import Band, Listing
+
+def tuto(request):
+    bands = Band.objects.all()
+    return render(request, 'listings/tuto.html', context={'bands' : bands})
 
 def about(request):
-    return HttpResponse('<h1>A propos</h1> <p>Nous adorons JeStocke !</p>')
+    return render(request, 'about.html')
 
 def list(request):
-    return HttpResponse('<h1>Listing</h1> <p>Nous adorons JeStocke !</p>')    
+    listings = Listing.objects.all()
+    return render(request, 'listings/listing.html', context={'listings' : listings})    
 
 def contact(request):
-    return HttpResponse('<h1>Contact Us</h1> <p>Nous adorons JeStocke !</p>')      
+    return render(request, 'contact.html')      
