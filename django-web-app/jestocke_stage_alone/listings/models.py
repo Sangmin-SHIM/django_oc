@@ -21,6 +21,9 @@ class Band(models.Model):
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
 
+    def __str__(self):
+        return f'{self.name}'
+
 
 #
 # 2. Listing
@@ -41,3 +44,7 @@ class Listing(models.Model):
         null = True
     )
     type = models.fields.CharField(choices=Type.choices, max_length=30)
+    band = models.ForeignKey(Band, null = True, on_delete= models.SET_NULL)
+
+    def __str__(self):
+        return f'{self.title}'
