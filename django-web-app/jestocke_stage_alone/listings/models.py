@@ -15,7 +15,8 @@ class Band(models.Model):
     genre = models.fields.CharField(choices=Genre.choices, max_length=5)
     biography = models.fields.CharField(max_length=100)
     year_formed = models.fields.IntegerField(
-        validators=[MinValueValidator(1900), MaxValueValidator(2022)]
+        validators=[MinValueValidator(1900), MaxValueValidator(2022)],
+        null = True
     )
     active = models.fields.BooleanField(default=True)
     official_homepage = models.fields.URLField(null=True, blank=True)
@@ -25,4 +26,18 @@ class Band(models.Model):
 # 2. Listing
 #
 class Listing(models.Model):
+
+    class Type(models.TextChoices):
+        DISQUES = 'RECORDS'
+        VETEMENTS = 'CLOTHING'
+        AFFICHES = 'POSTERS'
+        DIVERS = 'MISCELLANEOUS'
+
     title = models.fields.CharField(max_length=100)
+    description = models.fields.CharField(max_length=200)
+    sold = models.fields.BooleanField(default=None, null=True)
+    year = models.fields.IntegerField(
+        validators=[MinValueValidator(1900), MaxValueValidator(2022)],
+        null = True
+    )
+    type = models.fields.CharField(choices=Type.choices, max_length=30)
