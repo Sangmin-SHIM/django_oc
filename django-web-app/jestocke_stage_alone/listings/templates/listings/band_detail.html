@@ -15,4 +15,9 @@
    </ul>
    
    <p>{{ band.biography }}</p>
+
+
+   {% for listing in band.listing_set.all %}
+        <h5>{{listing.title}}</h5>
+   {% endfor%}
 {% endblock %}

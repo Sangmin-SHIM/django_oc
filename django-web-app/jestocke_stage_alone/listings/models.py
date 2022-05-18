@@ -24,7 +24,6 @@ class Band(models.Model):
     def __str__(self):
         return f'{self.name}'
 
-
 #
 # 2. Listing
 #

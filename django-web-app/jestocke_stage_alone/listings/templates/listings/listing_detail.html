@@ -1,0 +1,25 @@
+<!--listings/templates/listings/listing_detail.html-->
+
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<h2>{{listing.title}}</h2>
+
+<ul>
+    <li>Type : {{ listing.get_type_display }}</li>
+
+    <li>Description : {{ listing.description }}</li>
+
+    <li>Year : {{ listing.year }}</li>
+
+    {% if listing.band %}
+    <li>{{ listing.band }}</li>
+    {% endif %}
+
+    {% if listing.sold is FALSE %}
+    <li>SOLD : {{ listing.sold }}</li>
+    {% endif %}
+   </ul>
+   
+
+{% endblock %}

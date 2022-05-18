@@ -8,12 +8,18 @@ urlpatterns = [
     
     # bands
     path('bands/', views.band_list, name='band-list'),
-    path('bands/<int:band_id>/', views.band_detail),
+    path('bands/<int:band_id>/', views.band_detail, name = 'band-detail'),
     
     
-    path('listing/', views.list),
+    # listings
+    path('listing/', views.list, name='post-list'),
+    path('listing/<int:listing_id>/', views.list_detail, name='post-detail'),
+    
+    # Contact
+    path('contact/', views.contact, name = 'contact'),
+    path('email-sent/', views.email_sent, name = 'email-sent'),
 
     # info
-    path('about/', views.about),
-    path('contact/', views.contact),
+    path('about/', views.about, name='about'),
+
 ]

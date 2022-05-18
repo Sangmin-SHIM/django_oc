@@ -7,10 +7,13 @@
     </p>    
     <ul>
         {% for listing in listings %}
-        <li> 
-            {{ listing.title }}
-        </li>
+        <a href="{% url 'post-detail' listing.id %}">
+            <li> 
+                {{ listing.title }}
+            </li>
+        </a>
         {% endfor %}
     </ul>
+
 
 {% endblock %}    

@@ -11,6 +11,21 @@
     
     <body>
 
+        <nav>
+            <p>
+                <a href="{% url 'band-list' %}">Retour à tous les groupes (liste)</a>
+            </p>
+            <p>
+                <a href="{% url 'post-list' %}">Retour à toutes les postes (liste)</a>
+            </p>
+            <p>
+                <a href="{% url 'contact' %}">Contactez-Nous</a>
+            </p>
+            <p>
+                <a href="{% url 'about' %}">A propos</a>
+            </p>
+        </nav>
+
         {% block content %}
              <!-- Cette partie-là est réservée ! -->
         {% endblock %}
