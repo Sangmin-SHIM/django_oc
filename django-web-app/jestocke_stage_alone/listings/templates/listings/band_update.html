@@ -1,16 +1,15 @@
-<!--listings/templates/listings/listing_create.html-->
+<!--listings/templates/listings/band_update.html-->
 
 {% extends 'listings/base.html' %}
 
 {% block content %}
 
-<h1>Créer un nouveau post</h1>
+<h1>Mise à jour du groupe</h1>
 
-<form action="" method="post">
+<form action="" method="post" novalidate>
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Envoyer">
 </form>
-
 
 {% endblock %}
