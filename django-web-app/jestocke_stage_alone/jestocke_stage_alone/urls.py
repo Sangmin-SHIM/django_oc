@@ -15,6 +15,8 @@ urlpatterns = [
     # listings
     path('listing/', views.list, name='post-list'),
     path('listing/<int:listing_id>/', views.list_detail, name='post-detail'),
+    path('listing/add/', views.list_create, name='post-create'),
+
     
     # Contact
     path('contact/', views.contact, name = 'contact'),
