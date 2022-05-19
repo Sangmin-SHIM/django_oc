@@ -11,6 +11,8 @@
             <li> 
                 {{ listing.title }}
             </li>
+            - <a href="{% url 'post-update' listing.id %}">[Modifier]</a>    
+            - <a href="{% url 'post-delete' listing.id %}">[Supprimer]</a>
         </a>
         {% endfor %}
     </ul>
